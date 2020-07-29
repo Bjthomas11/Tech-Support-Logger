@@ -1,13 +1,6 @@
 {
   "logs": [
     {
-      "message": "Computer AC564 not starting up",
-      "attention": true,
-      "technician": "Brian Thomas",
-      "date": "2020-07-29T16:55:01.458Z",
-      "id": 1
-    },
-    {
       "message": "Hard drive failed for computer DC765 ",
       "attention": false,
       "technician": "Raider Thomas",
