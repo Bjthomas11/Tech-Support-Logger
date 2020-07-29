@@ -4,6 +4,8 @@ import "materialize-css/dist/css/materialize.min.css";
 
 import SearchBar from "./components/Layout/nav/search-bar.component";
 import Logs from "./components/logs/logs.component";
+import AddButton from "./components/Layout/add-button/add-button";
+import LogModal from "./components/logs/log-modal/log-modal.component";
 
 import "./App.css";
 
@@ -17,6 +19,8 @@ const App = () => {
     <Fragment>
       <SearchBar />
       <div className="container">
+        <AddButton />
+        <LogModal />
         <Logs />
       </div>
     </Fragment>
