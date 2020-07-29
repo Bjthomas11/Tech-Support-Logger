@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import { connect } from "react-redux";
 import { Row } from "react-bootstrap";
 import M from "materialize-css/dist/js/materialize.min";
+import { addLog } from "../../../actions/log-actions";
 
 import "./log-modal.styles.scss";
 
-const LogModal = () => {
+const LogModal = ({ addLog }) => {
   const [message, setMessage] = useState("");
   const [attention, setAttention] = useState(false);
   const [technician, setTechnician] = useState("");
@@ -16,7 +18,16 @@ const LogModal = () => {
         classes: "rounded",
       });
     } else {
-      console.log(message, technician, attention);
+      const newLog = {
+        message: message,
+        attention: attention,
+        technician: technician,
+        date: new Date(),
+      };
+
+      addLog(newLog);
+
+      M.toast({ html: `Log added by ${technician}` });
       //   clearing state fields
       setMessage("");
       setTechnician("");
@@ -104,4 +115,5 @@ const LogModal = () => {
   );
 };
 
-export default LogModal;
+// not bringing in any state to set mapStateToProps to null
+export default connect(null, { addLog })(LogModal);

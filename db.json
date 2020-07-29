@@ -1,25 +1,25 @@
 {
   "logs": [
     {
-      "id": 1,
-      "message": "Computer ACD45 not turning on",
+      "message": "Computer AC564 not starting up",
       "attention": true,
-      "date": "07-10-2020",
-      "technician": "Brian Thomas"
+      "technician": "Brian Thomas",
+      "date": "2020-07-29T16:55:01.458Z",
+      "id": 1
     },
     {
-      "id": 2,
-      "message": "Computer ACH65 getting hot during boot up",
+      "message": "Hard drive failed for computer DC765 ",
       "attention": false,
-      "date": "03-08-2020",
-      "technician": "Annie Thomas"
+      "technician": "Raider Thomas",
+      "date": "2020-07-29T16:55:20.668Z",
+      "id": 2
     },
     {
-      "id": 3,
-      "message": "Computer BGJ76 popping up memory space issue",
+      "message": "Computer memory pop up issue",
       "attention": false,
-      "date": "06-30-2020",
-      "technician": "Raider Thomas"
+      "technician": "Annie Thomas",
+      "date": "2020-07-29T16:55:37.450Z",
+      "id": 3
     }
   ],
   "technicians": [

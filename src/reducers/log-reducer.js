@@ -1,6 +1,6 @@
-// STATE MANAGMENT HERE
+// CONTROL STATE MANAGMENT HERE
 
-import { GET_LOGS, SET_LOADING, LOGS_ERROR } from "../actions/types";
+import { GET_LOGS, SET_LOADING, LOGS_ERROR, ADD_LOG } from "../actions/types";
 
 const initialState = {
   logs: null,
@@ -20,6 +20,13 @@ export default (state = initialState, action) => {
       return {
         ...state,
         logs: action.payload,
+        loading: false,
+      };
+    case ADD_LOG:
+      return {
+        ...state,
+        // spreading the current state of logs and adding the new log with action.payload
+        logs: [...state.logs, action.payload],
         loading: false,
       };
     case LOGS_ERROR:
