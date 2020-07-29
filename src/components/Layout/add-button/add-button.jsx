@@ -25,7 +25,7 @@ const AddButton = () => {
         </li>
         <li>
           <a
-            href="#technician-modal"
+            href="#add-technician-modal"
             className="btn-floating red modal-trigger"
           >
             <PersonAddIcon />

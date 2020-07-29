@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { Row } from "react-bootstrap";
 import M from "materialize-css/dist/js/materialize.min";
 
-import "./log-modal.styles.scss";
+import "./edit-modal.styles.scss";
 
-const LogModal = () => {
+const EditLogModal = () => {
   const [message, setMessage] = useState("");
   const [attention, setAttention] = useState(false);
   const [technician, setTechnician] = useState("");
@@ -17,6 +17,7 @@ const LogModal = () => {
       });
     } else {
       console.log(message, technician, attention);
+
       //   clearing state fields
       setMessage("");
       setTechnician("");
@@ -32,7 +33,7 @@ const LogModal = () => {
   };
 
   return (
-    <div id="add-log-modal" className="modal">
+    <div id="edit-log-modal" className="modal">
       <div className="modal-content">
         <h4>Enter Support Log</h4>
         <Row>
@@ -104,4 +105,4 @@ const LogModal = () => {
   );
 };
 
-export default LogModal;
+export default EditLogModal;
