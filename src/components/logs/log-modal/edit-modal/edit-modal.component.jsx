@@ -1,13 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { connect } from "react-redux";
 import { Row } from "react-bootstrap";
 import M from "materialize-css/dist/js/materialize.min";
+import { updateLog } from "../../../../actions/log-actions";
 
 import "./edit-modal.styles.scss";
 
-const EditLogModal = () => {
+const EditLogModal = ({ updateLog, current }) => {
   const [message, setMessage] = useState("");
   const [attention, setAttention] = useState(false);
   const [technician, setTechnician] = useState("");
+
+  // if current is true then setting each state to the current values, then pass current as a dependency
+  useEffect(() => {
+    if (current) {
+      setMessage(current.message);
+      setAttention(current.attention);
+      setTechnician(current.technician);
+    }
+  }, [current]);
 
   const onSubmit = (e) => {
     if (message === "" || technician === "") {
@@ -16,20 +27,23 @@ const EditLogModal = () => {
         classes: "rounded",
       });
     } else {
-      console.log(message, technician, attention);
+      const updatedLog = {
+        id: current.id,
+        message,
+        attention,
+        technician,
+        date: new Date(),
+      };
+
+      updateLog(updatedLog);
+
+      M.toast({ html: `Log updated by ${technician}` });
 
       //   clearing state fields
       setMessage("");
       setTechnician("");
       setAttention(false);
     }
-  };
-
-  const clearFields = () => {
-    //   clearing state fields
-    setMessage("");
-    setTechnician("");
-    setAttention(false);
   };
 
   return (
@@ -44,9 +58,9 @@ const EditLogModal = () => {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
             />
-            <label htmlFor="message" className="active">
+            {/* <label htmlFor="message" className="active">
               Log Support Message
-            </label>
+            </label> */}
           </div>
         </Row>
         <Row>
@@ -93,16 +107,13 @@ const EditLogModal = () => {
         >
           Enter
         </a>
-        <a
-          href="#!"
-          onClick={clearFields}
-          className="waves-effect waves-light btn clear"
-        >
-          Clear
-        </a>
       </div>
     </div>
   );
 };
 
-export default EditLogModal;
+const mapStateToProps = (state) => ({
+  current: state.log.current,
+});
+
+export default connect(mapStateToProps, { updateLog })(EditLogModal);

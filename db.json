@@ -1,17 +1,24 @@
 {
   "logs": [
     {
-      "message": "Hard drive failed for computer DC765 ",
-      "attention": false,
-      "technician": "Raider Thomas",
-      "date": "2020-07-29T16:55:20.668Z",
+      "message": "Computer DC675 not turning on",
+      "attention": true,
+      "technician": "Brian Thomas",
+      "date": "2020-07-29T17:30:42.027Z",
+      "id": 1
+    },
+    {
+      "message": "Computer GF8799 overheating",
+      "attention": true,
+      "technician": "Brian Thomas",
+      "date": "2020-07-29T17:31:02.338Z",
       "id": 2
     },
     {
-      "message": "Computer memory pop up issue",
+      "message": "Computer DE456 running slow",
       "attention": false,
-      "technician": "Annie Thomas",
-      "date": "2020-07-29T16:55:37.450Z",
+      "technician": "Raider Thomas",
+      "date": "2020-07-29T17:31:19.777Z",
       "id": 3
     }
   ],

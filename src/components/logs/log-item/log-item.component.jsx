@@ -2,11 +2,11 @@ import React from "react";
 import { connect } from "react-redux";
 import Moment from "react-moment";
 import DeleteIcon from "@material-ui/icons/Delete";
-import { deleteLog } from "../../../actions/log-actions";
+import { deleteLog, setCurrent } from "../../../actions/log-actions";
 
 import M from "materialize-css/dist/js/materialize.min";
 
-const LogItem = ({ log, deleteLog }) => {
+const LogItem = ({ log, deleteLog, setCurrent }) => {
   const onDeleteLog = () => {
     deleteLog(log.id);
     M.toast({ html: `Log: ${message} deleted` });
@@ -18,6 +18,7 @@ const LogItem = ({ log, deleteLog }) => {
         <a
           href="#edit-log-modal"
           className={`modal-trigger ${attention ? "red-text" : "blue-text"}`}
+          onClick={() => setCurrent(log)}
         >
           {message}
         </a>
@@ -37,4 +38,4 @@ const LogItem = ({ log, deleteLog }) => {
   );
 };
 
-export default connect(null, { deleteLog })(LogItem);
+export default connect(null, { deleteLog, setCurrent })(LogItem);
