@@ -10,6 +10,9 @@ import EditLogModal from "./components/logs/log-modal/edit-modal/edit-modal.comp
 import AddTechModal from "./components/technicians/tech-modal/tech-modal.component";
 import TechListModal from "./components/technicians/tech-modal/tech-list-modal/tech-list-modal.component.jsx";
 
+import { Provider } from "react-redux";
+import store from "./store";
+
 import "./App.css";
 
 const App = () => {
@@ -19,17 +22,19 @@ const App = () => {
   });
 
   return (
-    <Fragment>
-      <SearchBar />
-      <div className="container">
-        <AddButton />
-        <LogModal />
-        <EditLogModal />
-        <AddTechModal />
-        <TechListModal />
-        <Logs />
-      </div>
-    </Fragment>
+    <Provider store={store}>
+      <Fragment>
+        <SearchBar />
+        <div className="container">
+          <AddButton />
+          <LogModal />
+          <EditLogModal />
+          <AddTechModal />
+          <TechListModal />
+          <Logs />
+        </div>
+      </Fragment>
+    </Provider>
   );
 };
 
