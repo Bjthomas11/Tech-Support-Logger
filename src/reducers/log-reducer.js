@@ -1,3 +1,5 @@
+// STATE MANAGMENT HERE
+
 import { GET_LOGS, SET_LOADING, LOGS_ERROR } from "../actions/types";
 
 const initialState = {

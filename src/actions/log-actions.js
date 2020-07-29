@@ -2,6 +2,7 @@
 
 import { GET_LOGS, SET_LOADING, LOGS_ERROR } from "./types";
 
+// get logs from server
 export const getLogs = () => async (dispatch) => {
   // using thunk to use dispatch to get type and action at any time
   try {
