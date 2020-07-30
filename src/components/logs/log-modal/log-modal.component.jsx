@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { Row } from "react-bootstrap";
 import M from "materialize-css/dist/js/materialize.min";
 import { addLog } from "../../../actions/log-actions";
+import TechnicianSelectOption from "../../technicians/technician-select-options/technician-select-options.component";
 
 import "./log-modal.styles.scss";
 
@@ -70,9 +71,7 @@ const LogModal = ({ addLog }) => {
               <option value="" disabled>
                 Select Technician
               </option>
-              <option value="Brian Thomas">Brian Thomas</option>
-              <option value="Annie Thomas">Annie Thomas</option>
-              <option value="Raider Thomas">Raider Thomas</option>
+              <TechnicianSelectOption />
             </select>
           </div>
         </Row>

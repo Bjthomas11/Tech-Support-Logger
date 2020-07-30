@@ -1,12 +1,29 @@
 import React from "react";
+import { connect } from "react-redux";
+import { deleteTechnician } from "../../../../actions/technician-actions";
 import DeleteIcon from "@material-ui/icons/Delete";
+import M from "materialize-css/dist/js/materialize.min";
 
-const TechItem = ({ technician }) => {
+const TechItem = ({
+  technician: { firstName, lastName, id },
+  deleteTechnician,
+}) => {
+  const onDeleteTechnicians = () => {
+    deleteTechnician(id);
+    M.toast({
+      html: `${firstName} ${lastName} has been deleted`,
+      classes: "rounded",
+    });
+  };
   return (
     <li className="collection-item">
       <div>
-        {technician.firstName} {technician.lastName}
-        <a href="#!" className="secondary-content">
+        {firstName} {lastName}
+        <a
+          href="#!"
+          className="secondary-content"
+          onClick={onDeleteTechnicians}
+        >
           <i className="grey-text">
             <DeleteIcon />
           </i>
@@ -16,4 +33,4 @@ const TechItem = ({ technician }) => {
   );
 };
 
-export default TechItem;
+export default connect(null, { deleteTechnician })(TechItem);

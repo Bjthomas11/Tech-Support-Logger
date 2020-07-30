@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { Row } from "react-bootstrap";
+import { connect } from "react-redux";
+import { addTechnician } from "../../../actions/technician-actions";
 import M from "materialize-css/dist/js/materialize.min";
 
 import "./tech-modal.styles.scss";
 
-const TechModal = () => {
+const TechModal = ({ addTechnician }) => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
 
@@ -15,7 +17,11 @@ const TechModal = () => {
         classes: "rounded",
       });
     } else {
-      console.log(firstName, lastName);
+      addTechnician({ firstName, lastName });
+      M.toast({
+        html: `${firstName} ${lastName} was added as a Technician`,
+        classes: "rounded",
+      });
       //   clearing state fields
       setFirstName("");
       setLastName("");
@@ -79,4 +85,4 @@ const TechModal = () => {
   );
 };
 
-export default TechModal;
+export default connect(null, { addTechnician })(TechModal);
