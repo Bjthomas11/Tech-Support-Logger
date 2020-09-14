@@ -22,7 +22,7 @@ export const getTechnicians = () => async (dispatch) => {
   } catch (error) {
     dispatch({
       type: TECHNICIANS_ERROR,
-      payload: error.response.statusText,
+      payload: error.response,
     });
   }
 };
@@ -49,7 +49,7 @@ export const addTechnician = (technician) => async (dispatch) => {
   } catch (error) {
     dispatch({
       type: TECHNICIANS_ERROR,
-      payload: error.response.statusText,
+      payload: error.response,
     });
   }
 };
@@ -72,7 +72,7 @@ export const deleteTechnician = (id) => async (dispatch) => {
   } catch (error) {
     dispatch({
       type: TECHNICIANS_ERROR,
-      payload: error.response.statusText,
+      payload: error.response,
     });
   }
 };
