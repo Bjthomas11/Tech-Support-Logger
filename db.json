@@ -1,25 +1,18 @@
 {
   "logs": [
     {
-      "message": "Computer DC675 not turning on",
+      "message": "logging support message",
       "attention": true,
-      "technician": "Brian Thomas",
-      "date": "2020-07-29T17:30:42.027Z",
+      "technician": "brian thomas2",
+      "date": "2020-08-06T15:06:25.845Z",
       "id": 1
     },
     {
-      "message": "Computer GF8799 overheating",
-      "attention": true,
-      "technician": "Brian Thomas",
-      "date": "2020-07-29T17:31:02.338Z",
-      "id": 2
-    },
-    {
-      "message": "Computer DE456 running slow",
+      "message": "fnjsdgsdgs",
       "attention": false,
-      "technician": "Raider Thomas",
-      "date": "2020-07-29T17:31:19.777Z",
-      "id": 3
+      "technician": "Brian Thomas",
+      "date": "2020-08-06T15:06:36.902Z",
+      "id": 2
     }
   ],
   "technicians": [
@@ -29,14 +22,9 @@
       "lastName": "Thomas"
     },
     {
-      "id": 2,
-      "firstName": "Annie",
-      "lastName": "Thomas"
-    },
-    {
-      "id": 3,
-      "firstName": "Raider",
-      "lastName": "Thomas"
+      "firstName": "brian",
+      "lastName": "thomas2",
+      "id": 2
     }
   ]
 }
